@@ -44,11 +44,3 @@ O plugin não requer configurações adicionais. Ele utiliza o idioma configurad
 
 ## Contribuições
 Contribuições são bem-vindas! Caso tenha sugestões, melhorias ou encontre algum problema, fique à vontade para abrir uma issue ou enviar um pull request diretamente no repositório GitHub.
-
----
-
-## Suporte
-Se precisar de ajuda com o plugin, entre em contato conosco ou visite o repositório para mais informações:
-
-- **E-mail**: suporte@yogh.com.br  
-- **GitHub**: [https://github.com/murillotorres/yogh](https://github
