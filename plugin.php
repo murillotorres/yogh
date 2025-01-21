@@ -17,6 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; 
 }
 
+function client_customization_load_textdomain() {
+    load_plugin_textdomain( 'client-customization', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
+add_action( 'plugins_loaded', 'client_customization_load_textdomain' );
+
 function client_customization_add_message_to_content( $content ) {
     if ( is_singular( 'post' ) ) {
         $message = '<p><b>This content is created by: ' . esc_html( get_bloginfo( 'name' ) ) . ' (' . esc_url( get_bloginfo( 'url' ) ) . ')</b></p>';

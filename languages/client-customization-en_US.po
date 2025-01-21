@@ -1,0 +1,2 @@
+msgid "This content is created by: %1$s (%2$s)"
+msgstr "This content is created by: %1$s (%2$s)"
