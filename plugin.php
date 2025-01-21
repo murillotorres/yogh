@@ -24,8 +24,13 @@ add_action( 'plugins_loaded', 'client_customization_load_textdomain' );
 
 function client_customization_add_message_to_content( $content ) {
     if ( is_singular( 'post' ) ) {
-        $message = '<p><b>This content is created by: ' . esc_html( get_bloginfo( 'name' ) ) . ' (' . esc_url( get_bloginfo( 'url' ) ) . ')</b></p>';
-        return $content . $message;
+        $message = sprintf(
+            /* 1: Site name, 2: Site URL */
+            __( 'This content is created by: %1$s (%2$s)', 'client-customization' ),
+            esc_html( get_bloginfo( 'name' ) ),
+            esc_url( get_bloginfo( 'url' ) )
+        );
+        return $content . '<p><b>' . $message . '</b></p>';
     }
 
     return $content;
