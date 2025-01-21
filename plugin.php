@@ -25,4 +25,4 @@ function client_customization_add_message_to_content( $content ) {
 
     return $content;
 }
-
+add_filter( 'the_content', 'client_customization_add_message_to_content', 10 );
