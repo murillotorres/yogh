@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Client Customization
- * Plugin URI:https://www.yogh.com.br/
+ * Plugin URI:      https://www.yogh.com.br/
  * Description:     Plugins with Project Customization
  * Author:          Yogh Soluções
  * Author URI:      https://www.yogh.com.br/
@@ -14,12 +14,15 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
-die( 'not allowed' );
+    die( 'not allowed' );
 }
 
-add_filter('the_content', function ( $content ) {
+add_filter( 'the_content', function ( $content ) {
+    // Verifica se estamos em uma publicação (post).
+    if ( is_singular( 'post' ) ) {
+        $message = '<p><b>This content is created by: ' . get_bloginfo( 'name' ) . ' (' . get_bloginfo( 'url' ) . ')</b></p>';
+        return $content . $message;
+    }
 
-$message = '<p><b>This content is created by: ' . get_bloginfo( 'name' ) . ' (' . get_bloginfo( 'url' ) . ')</b></p>';
-return $content . $message;
-
+    return $content;
 }, 10 );
